@@ -24,20 +24,15 @@
               </div>
             </form>
 
-            <ul class="list-group list-group-flush mb-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Camila Rojas
-                <span class="badge bg-light text-dark">@camirojas</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Martín Pérez
-                <span class="badge bg-light text-dark">@martinp</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Sofía Contreras
-                <span class="badge bg-light text-dark">@sofiac</span>
-              </li>
-            </ul>
+            <div class="mb-3">
+              <label for="monto" class="form-label fw-semibold">Monto a enviar</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="monto" placeholder="0" min="0" step="1">
+              </div>
+            </div>
+
+            <ul class="list-group list-group-flush mb-3" id="listaContactos"></ul>
 
             <div class="d-grid">
               <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#newContactModal">
@@ -59,7 +54,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="formNuevoContacto">
             <div class="mb-3">
               <label for="contactName" class="form-label fw-semibold">Nombre completo</label>
               <input type="text" class="form-control" id="contactName" placeholder="Ej: Juan Soto">
@@ -68,20 +63,20 @@
               <label for="contactAlias" class="form-label fw-semibold">Alias / Usuario</label>
               <input type="text" class="form-control" id="contactAlias" placeholder="Ej: @juansoto">
             </div>
-            <div class="mb-3">
-              <label for="contactAccount" class="form-label fw-semibold">Cuenta o email</label>
-              <input type="text" class="form-control" id="contactAccount" placeholder="Ej: juan@correo.com">
-            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Guardar contacto</button>
+          <button type="submit" form="formNuevoContacto" class="btn btn-success">Guardar contacto</button>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/saldo.js"></script>
+  <script src="js/contactos.js"></script>
+  <script src="js/transacciones.js"></script>
+  <script src="js/sendmoney.js"></script>
 </body>
 </html>
