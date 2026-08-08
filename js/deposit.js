@@ -17,6 +17,14 @@ form.addEventListener("submit", function (event) {
 
   guardarSaldo(saldoNuevo);
 
-  alert("Depósito realizado. Nuevo saldo: " + formatearSaldo(saldoNuevo));
-  window.location.href = "menu.html";
+  // Mensaje dinámico con jQuery antes de volver al menú
+  $("#mensaje")
+    .text("Depósito realizado. Nuevo saldo: " + formatearSaldo(saldoNuevo))
+    .removeClass("d-none")
+    .hide()
+    .fadeIn(400);
+
+  setTimeout(function () {
+    window.location.href = "menu.html";
+  }, 1200);
 });

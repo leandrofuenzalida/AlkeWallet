@@ -77,3 +77,13 @@ formNuevoContacto.addEventListener("submit", function (event) {
 });
 
 renderizarContactos();
+
+// Autocompletar / filtrar contactos mientras se escribe (con jQuery)
+$("#search").on("keyup", function () {
+  const texto = $(this).val().toLowerCase();
+
+  $("#listaContactos li").each(function () {
+    const contenido = $(this).text().toLowerCase();
+    $(this).toggle(contenido.includes(texto));
+  });
+});
